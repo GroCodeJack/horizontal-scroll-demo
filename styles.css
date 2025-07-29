@@ -1,0 +1,89 @@
+/* Base styles for horizontal navigation */
+:root {
+  --nav-bg: #000;
+  --nav-text: #fff;
+  
+  --nav-hover: #222;
+  --nav-padding: 0.75rem 1.5rem;
+  --nav-min-width: 90px;
+  --indicator-width: 56px;
+}
+body {
+  margin: 0;
+  background: #111;
+  color: var(--nav-text);
+  font-family: system-ui, sans-serif;
+}
+.horizontal-nav {
+  background: var(--nav-bg);
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.nav-list {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0;
+  margin: 0;
+  list-style: none;
+  scrollbar-width: none;
+}
+.nav-list::-webkit-scrollbar { display: none; }
+.nav-list li {
+  min-width: var(--nav-min-width);
+  flex: 0 0 auto;
+}
+.nav-link {
+  display: block;
+  color: var(--nav-text);
+  text-decoration: none;
+  padding: var(--nav-padding);
+  transition: color 0.2s;
+  font-weight: 500;
+  text-align: center;
+  outline: none;
+  border-radius: 0;
+  background: none;
+}
+.nav-link:hover {
+  background: var(--nav-hover);
+}
+
+.nav-link:focus {
+  outline: none;
+  box-shadow: none;
+}
+.nav-link.active {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  color: var(--nav-text);
+  border-bottom: none;
+}
+.scroll-indicator {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: var(--indicator-width);
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+.scroll-indicator.left {
+  left: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.9), transparent);
+}
+.scroll-indicator.right {
+  right: 0;
+  background: linear-gradient(to left, rgba(0,0,0,0.9), transparent);
+}
+@media (max-width: 600px) {
+  .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  .horizontal-nav {
+    font-size: 0.98rem;
+  }
+}
