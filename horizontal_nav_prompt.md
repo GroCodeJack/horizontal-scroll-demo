@@ -32,12 +32,6 @@ Create a responsive horizontal scrolling navigation bar similar to Amazon's mobi
 - Support both mouse wheel and touch scrolling
 - Add smooth scroll behavior with CSS `scroll-behavior: smooth`
 
-### Bonus Features (if time permits)
-- **Scroll buttons**: Left/right arrow buttons that appear on hover (desktop)
-- **Snap scrolling**: Items snap to positions for better UX
-- **Dynamic content**: Ability to add/remove navigation items programmatically
-- **URL integration**: Update URL hash/query params based on active item
-- **Performance optimization**: Virtualization for very long lists
 
 ## Deliverables
 1. **HTML file**: Complete working example with semantic markup
